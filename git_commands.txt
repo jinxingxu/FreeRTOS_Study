@@ -1,0 +1,26 @@
+git 学习:
+1. 正常的一次提交
+    git status      产看本地都修改了哪些文件
+    git add         添加需要的文件到本地缓冲区   
+                    备注： git add --all 可以一次把所有修改的文件添加上去，git rm --cached xxx，可以去掉不想add上的文件。
+
+    git commit -m "feat: 上传FREERTOS源码
+    fix: NA
+    docs: NA
+    test: NA
+    chore: NA"      生成提交。备注：引号中的内容为此次提交的信息
+
+    git push orgin test         push到远程test分支
+    
+2. 如果想追加修改到上次的提交
+    保存修改的文件后，git add 把你这次要提交的文件添加到缓冲区；
+    然后使用git commit --amend 追加提交，这次会进入commit修改的界面，不想修改的话直接esc 左下角输入“：wq”保存退出即可。
+    然后正常push就行。
+3. 想把库上的代码回退到某笔提交的时候
+    1.通过找到想要退回到的哪个commit_id
+    $ git log
+    2.本地代码变成某个提交记录时刻的代码
+    git reset --hard commit_id
+    # 3.推送到远程test分支即可(自己修改分支)
+    $ git push origin HEAD:test --force
+
