@@ -8,7 +8,10 @@ git 学习:
     fix: NA
     docs: NA
     test: NA
-    chore: NA"      生成提交。备注：引号中的内容为此次提交的信息
+    chore: NA"      生成提交。
+                    备注：引号中的内容为此次提交的信息；如果还没有push，但是本地git log产看已经生成了一次commit提交信息，想删掉这次信息:
+                    git reset commit_id 就能删掉;
+                    慎用--hard， git reset --hard commit_id 会删掉本地的此commit_id提交的修改。
 
     git push orgin test         push到远程test分支
     
@@ -23,4 +26,9 @@ git 学习:
     git reset --hard commit_id
     # 3.推送到远程test分支即可(自己修改分支)
     $ git push origin HEAD:test --force
+4.git强制覆盖本地修改
+    git fetch --all
+    git reset --hard origin/test  test分支
+    git pull   拉取指令没有用到，上一步已经把本地仓库更到最新了
+待续。。。
 
